@@ -1,4 +1,6 @@
 Goodwill::Application.routes.draw do
+  resources :users
+
   resources :products
 	match "/", :to => "products#index", :via => 'get'
   # The priority is based upon order of creation: first created -> highest priority.
