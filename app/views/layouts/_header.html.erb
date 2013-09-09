@@ -1,4 +1,4 @@
-<% provide(:title, @user.name) %>
+
 <header class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
@@ -9,9 +9,9 @@
       </button>
       <a id="logo" class="brand" href="#"><%= full_title(:title) %></a>
       <div class="nav-collapse collapse">
-        <p class="navbar-text pull-right">
-         <% link_to "Profile", @users[0] %>
-        </p>
+        <div class="navbar-text pull-right">
+         <%= link_to "Profile", "#" %>
+        </div>
         <ul class="nav">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>

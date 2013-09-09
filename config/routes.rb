@@ -1,6 +1,4 @@
 Goodwill::Application.routes.draw do
-  resources :bids
-
   resources :users
 
   resources :products
