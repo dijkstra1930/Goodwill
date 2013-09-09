@@ -6,7 +6,3 @@ class Product < ActiveRecord::Base
 	validates_numericality_of :price, :on => :create
 end
 
-class Bid < ActiveRecord::Base
-	belongs_to :product
-	belongs_to :user
-end
