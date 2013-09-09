@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  descript: MyString
-  price: 1.5
+  product_name: MyString
+  product_price: 1.5
+  product_description: MyString
 
 two:
-  name: MyString
-  descript: MyString
-  price: 1.5
+  product_name: MyString
+  product_price: 1.5
+  product_description: MyString

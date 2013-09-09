@@ -1,55 +1,16 @@
+
 <div class="span9">
-<div class="row-fluid">
-
-  <% @products.each do |product| %>
-      <div class="span5">
-        <h2><span class="pull-left"><%=product.name %></span><span class="pull-right">$<%=product.price %></span></h2>
-        <p>
-          <%= image_tag "480x300.gif"%>
-        </p>
-        <p><a class="btn" href="#">View details »</a></p>
-      </div><!--/span-->
-  <% end %>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Descript</th>
-      <th>Price</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="row-fluid">
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.descript %></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="span5 offset1">
+      <h2 class = "pull-left"><%= product.product_name %></h2>
+      <h2 class = "pull-right">$<%= product.product_price %></h2>
+      <%= image_tag "480x300.gif" %>
+      <%= link_to 'View details', product %>
+    </div><!--/span-->
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<br>
 
-<%= link_to 'New Product', new_product_path %>-->
+
