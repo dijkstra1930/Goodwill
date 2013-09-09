@@ -1,30 +1,6 @@
-<div class="span9">
-<div class="row-fluid">
+<h1>Listing products</h1>
 
-  <% @products.each do |product| %>
-      <div class="span5">
-        <h2><span class="pull-left"><%=product.name %></span><span class="pull-right">$<%=product.price %></span></h2>
-        <p>
-          <%= image_tag "480x300.gif"%>
-        </p>
-        <p><a class="btn" href="#">View details »</a></p>
-      </div><!--/span-->
-  <% end %>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<table>
+<table>
   <thead>
     <tr>
       <th>Name</th>
@@ -52,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>-->
+<%= link_to 'New Product', new_product_path %>
