@@ -1,7 +1,4 @@
 Goodwill::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
-  get "static_pages/about"
   resources :products
 
   resources :users
@@ -17,8 +14,7 @@ Goodwill::Application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   # static routes
-  get '/help' => 'static_pages#help'
-  get '/about' => 'static_pages#about'
+  get '/about', to: 'static_pages#about'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

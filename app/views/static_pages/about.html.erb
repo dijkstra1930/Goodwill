@@ -1,2 +1,9 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+<% provide(:title, 'About Us') %>
+
+<h1><%= yield(:title) %></h1>
+<p>
+  This is a website displaying goodwill stuffs for CMUSV students within campus.
+</p>
+<p>
+  Our store address is NASA Ames Research Park, Bldg. 23, Moffett Field, CA 94035-0001.
+</p>
