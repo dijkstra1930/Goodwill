@@ -1,4 +1,5 @@
 Goodwill::Application.routes.draw do
+  devise_for :users
   resources :products, only: [:create, :destroy]
 
   resources :users
