@@ -38,7 +38,7 @@ group :development, :test do
   end
 
 group :development, :test do
-  gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails', '>= 2.13.1'
 end
 
 group :test do
@@ -53,8 +53,9 @@ end
 
 gem "devise", "~> 3.1.0"
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
+gem 'will_paginate', '3.0.3'
 # Use unicorn as the app server
 # gem 'unicorn'
 
