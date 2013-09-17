@@ -4,7 +4,6 @@ Goodwill::Application.routes.draw do
 
   resources :users
 
-  resources :sessions, only: [:new, :create, :destroy]
 	#match "/", :to => "products#index", :via => 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,13 +16,21 @@ Goodwill::Application.routes.draw do
 
   # static routes
   get '/about', to: 'static_pages#about', as: 'about'
-
+  get '/token' => 'home#token', as: :token
 
   # session routes
-  get '/signin',  to: 'sessions#new'
-  get '/signup',  to: 'users#new'
 
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+  end
+
+  devise_scope :user do
+    delete "/logout" => "devise/sessions#destroy"
+  end
+
+  devise_scope :user do
+    get "/sign_up" => "devise/registrations#new"
+  end
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
