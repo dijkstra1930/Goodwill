@@ -14,7 +14,6 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
 
-  it { should respond_to(:authenticate) }
 
 
   describe "when password is not present" do
