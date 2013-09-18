@@ -19,7 +19,6 @@ Goodwill::Application.routes.draw do
   get '/token' => 'home#token', as: :token
 
   # session routes
-
   devise_scope :user do
     get "/login" => "devise/sessions#new"
   end
@@ -32,6 +31,8 @@ Goodwill::Application.routes.draw do
     get "/sign_up" => "devise/registrations#new"
   end
 
+  # Ajax routes
+  post 'check_email', to: 'users#check_email'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

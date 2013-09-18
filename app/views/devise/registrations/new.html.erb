@@ -1,3 +1,8 @@
+<%= stylesheet_link_tag "validationEngine.jquery" %>
+<%= javascript_include_tag "jquery.validationEngine" %>
+<%= javascript_include_tag "jquery.validationEngine-en" %>
+
+
 <h2>Sign up</h2>
 
 <div class="row">
@@ -25,4 +30,32 @@
     <% end %>
   </div>
 </div>
+
+<script>
+
+    $("#user_email").focusout(function () {
+        $.ajax({
+            type: "POST",
+            data: "email=" + this.value,
+            url: "/check_email",
+            cache: false,
+            dataType: "json",
+            success: function (response, textStatus) {
+                if (response.status == true) {
+                    $("#user_email").validationEngine('showPrompt', 'Email Available!', 'pass');
+                } else {
+                    $("#user_email").validationEngine('showPrompt', 'This email is registered!', 'load');
+                }
+
+
+            },
+            error: function (response) {
+
+                console.log(response.json);
+
+            }
+        });
+    });
+
+</script>
 <%= render "devise/shared/links" %>

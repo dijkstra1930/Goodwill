@@ -21,7 +21,7 @@ As required on task 3:
 
 ### Have one AJAX operation.
 
-- This website uses data-turbolinks-track, which is already an AJAX operation.
+- During sign-up, it uses ajax to check whether the email is registered.
 
 ### Have one REST API and be able to test it with an XML request
 
