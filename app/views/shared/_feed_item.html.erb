@@ -1,0 +1,19 @@
+<div class="span5" id="<%= feed_item.id %>">
+  <span class="pull-left product_name"><%= feed_item.product_name %></span>
+  <span class="pull-right product_price">$<%= feed_item.product_price %></span>
+  <% if feed_item.image_uri %>
+      <%= image_tag feed_item.image_uri %>
+  <% else %>
+      <%= image_tag "480x300.gif" %>
+  <% end %>
+
+
+  <div>
+       <span class="pull-left timestamp">
+    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </span>
+    <span class="pull-right product_user"><%= link_to feed_item.user.username, feed_item.user %></span>
+
+  </div>
+  <br>
+</div>

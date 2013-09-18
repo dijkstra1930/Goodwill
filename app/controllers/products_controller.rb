@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user,   only: :destroy
 
   # GET /products
   # GET /products.json
@@ -31,6 +32,8 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render action: 'show', status: :created, location: @product }
       else
+        @feed_items = []
+        render 'static_pages/home'
         format.html { render action: 'new' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
@@ -55,8 +58,9 @@ class ProductsController < ApplicationController
   # DELETE /products/1.json
   def destroy
     @product.destroy
+
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end
@@ -66,6 +70,13 @@ class ProductsController < ApplicationController
     def set_product
       @product = Product.find(params[:id])
     end
+
+
+  def correct_user
+    @products = current_user.products.find_by(id: params[:id])
+    rescue
+    redirect_to root_url if products.nil?
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params

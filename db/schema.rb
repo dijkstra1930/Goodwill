@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130916074401) do
+ActiveRecord::Schema.define(version: 20130918163319) do
 
   create_table "products", force: true do |t|
     t.string   "product_name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130916074401) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_uri"
   end
 
   add_index "products", ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"
