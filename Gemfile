@@ -57,6 +57,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'will_paginate', '3.0.3'
 
 gem "factory_girl_rails", "~> 4.0"
+
+gem "faker"
 # Use unicorn as the app server
 # gem 'unicorn'
 
