@@ -24,3 +24,5 @@ As required on task 3:
 - This website uses data-turbolinks-track, which is already an AJAX operation.
 
 ### Have one REST API and be able to test it with an XML request
+
+- try GET http://localhost:3000/users.xml
