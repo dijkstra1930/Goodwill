@@ -1,13 +1,11 @@
 <p id="notice"><%= notice %></p>
 <% provide(:title, @user.username) %>
-<div class="container">
+<div class="container span12">
   <% if @user.products.any? %>
-      <div class="heading"><h3>Products (<%= @user.products.count %>)</h3></div>
-      <div class="row-fluid">
+      <div class="heading center"><h3>Your Products: <%= @user.products.count %> items</h3></div>
+
+        <%= render partial: 'shared/feed_item', collection: @products %>
         <%= render @products %>
-        </div>
       <%= will_paginate @products %>
   <% end %>
 </div>
-
-

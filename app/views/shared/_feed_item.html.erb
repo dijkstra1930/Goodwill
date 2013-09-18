@@ -1,19 +1,39 @@
-<div class="span5" id="<%= feed_item.id %>">
-  <span class="pull-left product_name"><%= feed_item.product_name %></span>
-  <span class="pull-right product_price">$<%= feed_item.product_price %></span>
-  <% if feed_item.image_uri %>
-      <%= image_tag feed_item.image_uri %>
-  <% else %>
-      <%= image_tag "480x300.gif" %>
-  <% end %>
+<div class="row offset1">
+  <div class="span6">
 
-
-  <div>
-       <span class="pull-left timestamp">
-    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-  </span>
-    <span class="pull-right product_user"><%= link_to feed_item.user.username, feed_item.user %></span>
+    <% if feed_item.image_uri %>
+        <%= image_tag feed_item.image_uri %>
+    <% else %>
+        <%= image_tag "480x300.gif" %>
+    <% end %>
 
   </div>
-  <br>
+
+  <div class="span4" id="<%= feed_item.id %>">
+    <br>
+    <p class="product_name">Name: <%= feed_item.product_name %></p>
+    <p class="product_price">Price: $<%= feed_item.product_price %></p>
+    <br>
+    <p>
+      <%= feed_item.product_description %>
+    </p>
+
+    <div>
+       <p class="timestamp">
+    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </p>
+      <p class="product_user">Created by: <%= link_to feed_item.user.username, feed_item.user %></p>
+
+
+          <p class="p product_delete">
+
+    <% if current_user==feed_item.user %>
+        <%= link_to "Delete this item", feed_item, method: :delete,
+                    data: {confirm: "You sure?"},
+                    title: feed_item.product_name %>
+    <% end %>
+    </p>
+    </div>
+  </div>
 </div>
+<div class="row"><br></div>
