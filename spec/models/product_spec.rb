@@ -4,7 +4,7 @@ describe Product do
 
   let(:user) { FactoryGirl.create(:user) }
   before { @product = user.products.build(product_name: "Test product",
-                                          roduct_price: 13.00, product_description: "Lorem ipsum")}
+                                          product_price: 13.00, product_description: "Lorem ipsum")}
 
   subject { @product }
 
